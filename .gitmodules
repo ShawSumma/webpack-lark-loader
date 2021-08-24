@@ -1,0 +1,3 @@
+[submodule "Lark.js"]
+	path = Lark.js
+	url = https://github.com/lark-parser/Lark.js
