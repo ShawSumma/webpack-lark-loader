@@ -1,5 +1,5 @@
 {
-  "name": "webpack-lark-loader",
+  "name": "@shawsumma/webpack-lark-loader",
   "version": "0.0.1",
   "description": "Webpack Loader for Lark.js",
   "main": "index.js",
