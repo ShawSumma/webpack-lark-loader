@@ -1,0 +1,1 @@
+experamental webpack loader for [lark](https://github.com/lark-parser/Lark.js)
