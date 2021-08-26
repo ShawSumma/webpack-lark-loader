@@ -1,5 +1,5 @@
 {
-  "name": "@shawsumma/webpack-lark-loader",
+  "name": "webpack-lark-loader",
   "version": "0.0.1",
   "description": "Webpack Loader for Lark.js",
   "main": "index.js",
@@ -17,12 +17,5 @@
   "dependencies": {
     "python-shell": "^3.0.0",
     "tmp": "^0.2.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "babel-jest": "^27.0.6",
-    "jest": "^27.0.6",
-    "webpack": "^5.51.1"
   }
 }
