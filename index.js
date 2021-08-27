@@ -4,8 +4,7 @@ const path = require('path');
 const tmp = require('tmp');
 const { PythonShell } = require('python-shell');
 
-const larkInstall = path.resolve(__dirname, './install.py')
-const larkJs = path.resolve(__dirname, './lark/main.py');
+const pythonRunFile = path.resolve(__dirname, './run.py')
 module.exports = function (source) {
     let callback = this.async();
 
@@ -23,29 +22,23 @@ module.exports = function (source) {
                     rmInFile();
                     return callback(err);
                 }
+                
+                const options = {
+                    args: [inFile, outFile],
+                };
 
-                PythonShell.run(larkInstall, {}, (err) => {
+                PythonShell.run(pythonRunFile, options, (err) => {
+                    rmInFile();
                     if (err != null) {
-                        rmInFile();
                         rmOutFile();
                         return callback(err);
                     }
-                    const options = {
-                        args: [inFile, '--out', outFile],
-                    };
-                    PythonShell.run(larkJs, options, (err) => {
-                        rmInFile();
+                    fs.readFile(outFile, {}, (err, data) => {
+                        rmOutFile();
                         if (err != null) {
-                            rmOutFile();
                             return callback(err);
                         }
-                        fs.readFile(outFile, {}, (err, data) => {
-                            rmOutFile();
-                            if (err != null) {
-                                return callback(err);
-                            }
-                            return callback(null, data);
-                        });
+                        return callback(null, data);
                     });
                 });
             })

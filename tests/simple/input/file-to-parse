@@ -1,0 +1,1 @@
+put your grammar in src/grammar.lark and the data to parse in input/file-to-parse.txt
