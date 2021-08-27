@@ -8,7 +8,7 @@ jobs:
           run: |
             sudo apt install nodejs python3
         - name: install webpack-lark-loader and run
+          working-directory: test/simple
           run: |
-            cd test/simple
             npm install ../..
             npm run run
