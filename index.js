@@ -4,7 +4,8 @@ const path = require('path');
 const tmp = require('tmp');
 const { PythonShell } = require('python-shell');
 
-const pythonRunFile = path.resolve(__dirname, './run.py')
+const pythonRunFile = path.resolve(__dirname, './run.py');
+
 module.exports = function (source) {
     let callback = this.async();
 
