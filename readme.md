@@ -8,4 +8,5 @@ Based on [lark.js](https://github.com/lark-parser/Lark.js), webpack-lark-loader 
 
 ## Usage
 
+See examples: https://github.com/ShawSumma/webpack-lark-loader-examples
 
